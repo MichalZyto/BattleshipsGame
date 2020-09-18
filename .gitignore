@@ -3,3 +3,11 @@
 ################################################################################
 
 /.vs
+/ShipGame.Common/bin/Debug/netcoreapp3.1
+/ShipGame.Common/obj
+/ShipGame.Test/bin/Debug/netcoreapp3.1
+/ShipGame.Test/obj
+/ShipGame.UI/bin/Debug/netcoreapp3.1
+/ShipGame.UI/obj
+/ShipsGame.App/bin/Debug/netcoreapp3.1
+/ShipsGame.App/obj
