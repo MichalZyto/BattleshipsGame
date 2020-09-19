@@ -18,7 +18,7 @@ namespace ShipGame.Test.App.buisnesLogic
             _userInterfaceMock = new Mock<IUserInterface>();
             _userInterfaceMock.Setup(x => x.RestartMap());
             _userInterfaceMock.Setup(x => x.MarkShipLocationOnMap(It.IsAny<int>(), It.IsAny<int>()));
-            _userInterfaceMock.Setup(x => x.ShowBattleMap());
+            _userInterfaceMock.Setup(x => x.ShowBattleMap(It.IsAny<bool>()));
             _userInterfaceMock.Setup(x => x.GetUserCoordinates()).Returns((_exampleX, _exampleY));
             _userInterfaceMock.Setup(x => x.GetUserRestartGameDecision()).Returns(true);
             _userInterfaceMock.Setup(x => x.ShowMissedCount(It.IsAny<int>()));
@@ -46,6 +46,8 @@ namespace ShipGame.Test.App.buisnesLogic
             Assert.IsNotNull(result, $"Method {nameof(IGameLogic.GetCoordinates)} of interface {nameof(IGameLogic)} should return coordinates X and Y");
             Assert.AreEqual(_exampleX, result.X, $"Method {nameof(IGameLogic.GetCoordinates)} of interface {nameof(IGameLogic)} should return coordinates X equal to {_exampleX}");
             Assert.AreEqual(_exampleY, result.Y, $"Method {nameof(IGameLogic.GetCoordinates)} of interface {nameof(IGameLogic)} should return coordinates Y equal to {_exampleY}");
+            _userInterfaceMock.Verify(x => x.ShowBattleMap(false), Times.Once,
+                $"Method {nameof(IGameLogic.GetCoordinates)} of interface {nameof(IGameLogic)} should call {nameof(IUserInterface.ShowBattleMap)} method from interface {nameof(IUserInterface)} with default parameter false");
         }
 
         [Test]

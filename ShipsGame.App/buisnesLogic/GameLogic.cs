@@ -36,9 +36,6 @@ namespace ShipsGame.App.buisnesLogic
             ResetFleet();
             CreateAndAddShipTypeToFleet(ShipType.Battleship, Constants.BattleShipCount);
             CreateAndAddShipTypeToFleet(ShipType.Destroyer, Constants.DestroyerShipCount);
-#if DEBUG
-            _userInterface.ShowBattleMap();
-#endif
         }
 
         private void CreateAndAddShipTypeToFleet(ShipType shipType, int shipCount)
@@ -116,17 +113,11 @@ namespace ShipsGame.App.buisnesLogic
 
         public void Missed()
         {
-#if DEBUG
-            _userInterface.ShowBattleMap();
-#endif
             _userInterface.ShowMissedCount(++_currentMissCounter);
         }
 
         public bool EnemyTargesPresent()
         {
-#if DEBUG
-            _userInterface.ShowBattleMap();
-#endif
             return _enemyFleet.Count() > 0
                     && _enemyFleet.Any(x => (new List<IShipPart>((x as BaseShip)))
                                              .Any(y => y.Status == PartStatus.Intact));
@@ -141,7 +132,11 @@ namespace ShipsGame.App.buisnesLogic
 
         public void ShowEndCredits() => _userInterface.ShowEndCredits();
 
-        public (int X, int Y) GetCoordinates() => _userInterface.GetUserCoordinates();
+        public (int X, int Y) GetCoordinates()
+        {
+            _userInterface.ShowBattleMap();
+            return _userInterface.GetUserCoordinates();
+        }
 
         public bool GetUserRestartGameDecision() => _userInterface.GetUserRestartGameDecision();
     }

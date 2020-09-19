@@ -37,7 +37,7 @@ namespace ShipGame.UI
         public void ShowSummary(int missedCount)
         {
             Console.Clear();
-            ShowBattleMap();
+            ShowBattleMap(true);
             Console.WriteLine(Constants.SummaryMessage(missedCount));
         }
 
@@ -67,8 +67,11 @@ namespace ShipGame.UI
             _battleMap[x, y] = '#';
         }
 
-        public void ShowBattleMap()
+        public void ShowBattleMap(bool showShips = false)
         {
+#if DEBUG
+            showShips = true;
+#endif
             int rowLength = _battleMap.GetLength(0);
             int colLength = _battleMap.GetLength(1);
             for (int rowIdx = 0; rowIdx < rowLength; rowIdx++)
@@ -89,7 +92,7 @@ namespace ShipGame.UI
                     {
                         Console.Write($"{Convert.ToChar('A' + rowIdx)}{spaces}");
                     }
-                    Console.Write($"{(_battleMap[colIdx, rowIdx] != '\0' ? _battleMap[colIdx, rowIdx] : '~')}{spaces}");
+                    Console.Write($"{(_battleMap[colIdx, rowIdx] != '\0' && (_battleMap[colIdx, rowIdx] != '@' || showShips) ? _battleMap[colIdx, rowIdx] : '~')}{spaces}");
                 }
                 Console.Write(Environment.NewLine + Environment.NewLine);
             }

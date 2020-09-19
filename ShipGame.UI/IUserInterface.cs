@@ -5,7 +5,8 @@
         /// <summary>
         /// Show current battle map
         /// </summary>
-        void ShowBattleMap();
+        /// <param name="showShips">Show intact ship parts</param>
+        void ShowBattleMap(bool showShips = false);
 
         /// <summary>
         /// Shows user introduction
