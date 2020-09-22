@@ -3,10 +3,10 @@ using ShipGame.UI;
 using ShipsGame.App.models;
 using System.Collections.Generic;
 using System.Linq;
-using static ShipsGame.App.buisnesLogic.ShipFactory;
+using static ShipsGame.App.businessLogic.ShipFactory;
 using static ShipsGame.App.models.ShipPart;
 
-namespace ShipsGame.App.buisnesLogic
+namespace ShipsGame.App.businessLogic
 {
     public class GameLogic : IGameLogic
     {

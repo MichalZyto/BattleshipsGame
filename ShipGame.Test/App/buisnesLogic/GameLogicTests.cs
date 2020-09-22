@@ -1,9 +1,9 @@
 ﻿using Moq;
 using NUnit.Framework;
 using ShipGame.UI;
-using ShipsGame.App.buisnesLogic;
+using ShipsGame.App.businessLogic;
 
-namespace ShipGame.Test.App.buisnesLogic
+namespace ShipGame.Test.App.businessLogic
 {
     public class GameLogicTests
     {

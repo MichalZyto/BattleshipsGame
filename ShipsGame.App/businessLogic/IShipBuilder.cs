@@ -1,7 +1,7 @@
 ﻿using ShipsGame.App.models;
 using System;
 
-namespace ShipsGame.App.buisnesLogic
+namespace ShipsGame.App.businessLogic
 {
     /// <summary>
     /// Instance of ship builder

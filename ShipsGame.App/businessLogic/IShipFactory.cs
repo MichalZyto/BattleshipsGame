@@ -1,6 +1,6 @@
 ﻿using ShipsGame.App.models;
 
-namespace ShipsGame.App.buisnesLogic
+namespace ShipsGame.App.businessLogic
 {
     /// <summary>
     /// Instance of ship factory

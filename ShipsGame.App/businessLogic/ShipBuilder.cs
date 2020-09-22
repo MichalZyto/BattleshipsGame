@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShipsGame.App.buisnesLogic
+namespace ShipsGame.App.businessLogic
 {
     public class ShipBuilder : IShipBuilder
     {

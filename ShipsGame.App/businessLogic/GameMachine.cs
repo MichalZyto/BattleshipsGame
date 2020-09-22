@@ -2,7 +2,7 @@
 using Stateless;
 using System;
 
-namespace ShipsGame.App.buisnesLogic
+namespace ShipsGame.App.businessLogic
 {
     public class GameMachine : IGameMachine
     {

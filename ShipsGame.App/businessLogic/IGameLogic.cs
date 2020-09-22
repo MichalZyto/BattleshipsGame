@@ -1,4 +1,4 @@
-﻿namespace ShipsGame.App.buisnesLogic
+﻿namespace ShipsGame.App.businessLogic
 {
     /// <summary>
     /// Instance of game logic

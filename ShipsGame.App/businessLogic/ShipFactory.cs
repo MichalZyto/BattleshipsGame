@@ -2,7 +2,7 @@
 using ShipsGame.App.models;
 using System;
 
-namespace ShipsGame.App.buisnesLogic
+namespace ShipsGame.App.businessLogic
 {
     public class ShipFactory : IShipFactory
     {

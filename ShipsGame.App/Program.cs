@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using ShipGame.UI;
-using ShipsGame.App.buisnesLogic;
+using ShipsGame.App.businessLogic;
 
 namespace ShipsGame.App
 {
@@ -9,7 +9,6 @@ namespace ShipsGame.App
         private static IContainer Configure()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<Game>().As<IGame>();
             builder.RegisterType<GameLogic>().As<IGameLogic>();
             builder.RegisterType<GameMachine>().As<IGameMachine>();
             builder.RegisterType<ConsoleUI>().As<IUserInterface>();
@@ -21,8 +20,7 @@ namespace ShipsGame.App
         {
             using (var scope = Configure().BeginLifetimeScope())
             {
-                var game = scope.Resolve<IGame>();
-                game.Run();
+                scope.Resolve<IGameMachine>().RunGameTrigger();
             }
         }
     }

@@ -1,11 +1,11 @@
 ﻿using Moq;
 using NUnit.Framework;
-using ShipsGame.App.buisnesLogic;
+using ShipsGame.App.businessLogic;
 using ShipsGame.App.models;
 using System;
 using Constants = ShipGame.Common.Constants;
 
-namespace ShipGame.Test.App.buisnesLogic
+namespace ShipGame.Test.App.businessLogic
 {
     public class ShipBuilderTests
     {
